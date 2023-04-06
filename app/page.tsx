@@ -6,42 +6,19 @@ import SectionSpan from './components/spans/SectionSpan';
 import dollarIcon from './assets/icon-dollar.svg';
 import personIcon from './assets/icon-person.svg';
 import AmmountSpan from './components/spans/AmmountSpan';
+import MainContainer from './components/containers/MainContainer';
+import GeneralContainer from './components/containers/GeneralContainer';
 
 const percentages = ['5%', '10%', '15%', '25%', '50%'];
 
 const page = () => {
   return (
-    <div
-      className='
-      flex
-      flex-col
-      gap-8
-      justify-end
-      md:justify-center
-      min-h-[1020px]
-      md:min-h-0
-      '
-      style={{ height: '100%', alignItems: 'center' }}
-    >
+    <GeneralContainer>
       <header className='flex flex-col justify-center'>
         <Title />
       </header>
 
-      <div
-        className=' 
-      bg-white
-      gap-7
-      grid
-      grid-cols-1
-      lg:w-9/12
-      md:grid-cols-2
-      md:rounded-[30px]
-      md:w-11/12
-      p-7
-      rounded-t-[35px]
-      w-full
-      '
-      >
+      <MainContainer>
         <div>
           <div>
             <SectionSpan>Bill</SectionSpan>
@@ -74,8 +51,8 @@ const page = () => {
             RESET
           </Button>
         </div>
-      </div>
-    </div>
+      </MainContainer>
+    </GeneralContainer>
   );
 };
 
