@@ -5,18 +5,26 @@ import dollar from './assets/icon-dollar.svg';
 
 const page = () => {
   return (
-    <>
-      <header className='h-1/5 flex flex-col justify-center'>
+    <div
+      className='
+      flex
+      flex-col
+      gap-8
+      justify-end
+      md:justify-center'
+      style={{ height: '100%', alignItems: 'center' }}
+    >
+      <header className='flex flex-col justify-center'>
         <Title />
       </header>
 
-      <div className='h-full bg-white rounded-t-[35px] p-7'>
+      <div className=' bg-white rounded-t-[35px] p-7 w-full md:w-11/12 lg:w-9/12'>
         <div>
           <SectionSpan>Bill</SectionSpan>
           <Input placeholder='0' icon={dollar} iconAlt='dollar icon' />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
