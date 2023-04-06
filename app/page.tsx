@@ -18,6 +18,8 @@ const page = () => {
       gap-8
       justify-end
       md:justify-center
+      min-h-[1020px]
+      md:min-h-0
       '
       style={{ height: '100%', alignItems: 'center' }}
     >
