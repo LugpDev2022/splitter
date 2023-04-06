@@ -70,7 +70,7 @@ const page = () => {
             <AmmountSpan ammount={0.0}>Tip Ammmount</AmmountSpan>
             <AmmountSpan ammount={0.0}>Total</AmmountSpan>
           </div>
-          <Button active className='w-full'>
+          <Button active className='w-full' disabled>
             RESET
           </Button>
         </div>
