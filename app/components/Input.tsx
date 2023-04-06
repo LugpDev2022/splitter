@@ -22,7 +22,21 @@ const Input: React.FC<InputProps> = ({ placeholder, icon, iconAlt }) => {
 
       <input
         type='text'
-        className='w-full text-right text-2xl p-3 font-bold'
+        className='
+        border-2
+        border-transparent
+        duration-300
+        focus:border-cyan-400
+        font-bold
+        hover:border-cyan-400
+        hover:cursor-pointer 
+        outline-none
+        p-2
+        rounded-lg
+        text-2xl
+        text-right
+        transition
+        w-full'
         style={{
           background: 'hsl(189, 41%, 97%)',
           color: 'hsl(183, 100%, 15%)',
