@@ -21,7 +21,7 @@ const page = () => {
         <Title />
       </header>
 
-      <div className=' bg-white rounded-t-[35px] p-7 w-full md:w-11/12 lg:w-9/12'>
+      <div className=' bg-white rounded-t-[35px] md:rounded-[30px] p-7 w-full md:w-11/12 lg:w-9/12'>
         <div>
           <SectionSpan>Bill</SectionSpan>
           <Input placeholder='0' icon={dollar} iconAlt='dollar icon' />
