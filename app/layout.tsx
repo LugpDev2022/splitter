@@ -1,3 +1,4 @@
+import ContextProvider from './components/context/ContextProvider';
 import './globals.css';
 import { Space_Mono } from 'next/font/google';
 
@@ -17,7 +18,9 @@ export default function RootLayout({
       <head>
         <link rel='shortcut icon' href='/favicon.png' />
       </head>
-      <body className={spaceMono.className}>{children}</body>
+      <ContextProvider>
+        <body className={spaceMono.className}>{children}</body>
+      </ContextProvider>
     </html>
   );
 }

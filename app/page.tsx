@@ -1,5 +1,4 @@
 import Input from './components/Input';
-import Title from './components/Title';
 import Button from './components/buttons/Button';
 import SectionSpan from './components/spans/SectionSpan';
 
@@ -8,15 +7,14 @@ import personIcon from './assets/icon-person.svg';
 import AmmountSpan from './components/spans/AmmountSpan';
 import MainContainer from './components/containers/MainContainer';
 import GeneralContainer from './components/containers/GeneralContainer';
+import Header from './components/Header';
 
 const percentages = ['5%', '10%', '15%', '25%', '50%'];
 
 const page = () => {
   return (
     <GeneralContainer>
-      <header className='flex flex-col justify-center'>
-        <Title />
-      </header>
+      <Header />
 
       <MainContainer>
         <div>
