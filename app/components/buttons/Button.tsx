@@ -1,15 +1,13 @@
 interface ButtonProps {
   children: React.ReactNode;
   active?: boolean;
+  className?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ children, active }) => {
+const Button: React.FC<ButtonProps> = ({ children, active, className }) => {
   return (
     <button
       className={`
-   
-    w-50
-    block
     p-4
     rounded-lg
     font-bold
@@ -20,9 +18,10 @@ const Button: React.FC<ButtonProps> = ({ children, active }) => {
     hover:text-cyan-900
     transition
     duration-300
+    ${className}
   `}
     >
-      {children}%
+      {children}
     </button>
   );
 };

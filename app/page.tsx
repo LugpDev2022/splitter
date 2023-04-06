@@ -7,7 +7,7 @@ import dollarIcon from './assets/icon-dollar.svg';
 import personIcon from './assets/icon-person.svg';
 import AmmountSpan from './components/spans/AmmountSpan';
 
-const percentages: number[] = [5, 10, 15, 25, 50];
+const percentages = ['5%', '10%', '15%', '25%', '50%'];
 
 const page = () => {
   return (
@@ -48,7 +48,7 @@ const page = () => {
           <div className='mt-4'>
             <SectionSpan>Select Tip %</SectionSpan>
             <div className='grid grid-cols-2 md:grid-cols-3 gap-4'>
-              {percentages.map((percentage: number) => (
+              {percentages.map((percentage: string) => (
                 <Button key={percentage}>{percentage}</Button>
               ))}
             </div>
@@ -63,9 +63,14 @@ const page = () => {
             />
           </div>
         </div>
-        <div className='bg-[#00494d] rounded-xl p-7'>
-          <AmmountSpan ammount={0.0}>Tip Ammmount</AmmountSpan>
-          <AmmountSpan ammount={0.0}>Total</AmmountSpan>
+        <div className='bg-[#00494d] rounded-xl p-7 flex flex-col justify-between'>
+          <div>
+            <AmmountSpan ammount={0.0}>Tip Ammmount</AmmountSpan>
+            <AmmountSpan ammount={0.0}>Total</AmmountSpan>
+          </div>
+          <Button active className='w-full'>
+            RESET
+          </Button>
         </div>
       </div>
     </div>
