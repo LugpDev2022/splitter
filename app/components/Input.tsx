@@ -4,9 +4,15 @@ interface InputProps {
   icon: string;
   iconAlt: string;
   placeholder: string;
+  iconWidth?: number;
 }
 
-const Input: React.FC<InputProps> = ({ placeholder, icon, iconAlt }) => {
+const Input: React.FC<InputProps> = ({
+  placeholder,
+  icon,
+  iconAlt,
+  iconWidth = 16,
+}) => {
   return (
     <div className='mt-2'>
       <div
@@ -16,13 +22,14 @@ const Input: React.FC<InputProps> = ({ placeholder, icon, iconAlt }) => {
         <Image
           src={icon}
           alt={iconAlt}
-          style={{ height: '23px', width: '16px' }}
+          style={{ height: '23px', width: `${iconWidth}px` }}
         />
       </div>
 
       <input
         type='text'
         className='
+        bg-[#f4fafa]
         border-2
         border-transparent
         duration-300
@@ -33,14 +40,12 @@ const Input: React.FC<InputProps> = ({ placeholder, icon, iconAlt }) => {
         outline-none
         p-2
         rounded-lg
+        text-[#00494d]
         text-2xl
         text-right
         transition
-        w-full'
-        style={{
-          background: 'hsl(189, 41%, 97%)',
-          color: 'hsl(183, 100%, 15%)',
-        }}
+        w-full
+        '
         placeholder={placeholder}
       />
     </div>
