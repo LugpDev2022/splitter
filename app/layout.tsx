@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
+    <html lang='en' className='bg-blue-200'>
       <head>
         <link rel='shortcut icon' href='/favicon.png' />
       </head>

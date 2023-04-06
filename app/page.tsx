@@ -1,5 +1,11 @@
+import Title from './components/Title';
+
 const page = () => {
-  return <div>Splitter</div>;
+  return (
+    <>
+      <Title />
+    </>
+  );
 };
 
 export default page;
