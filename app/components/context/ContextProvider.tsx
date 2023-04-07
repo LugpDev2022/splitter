@@ -16,30 +16,26 @@ const ContextProvider: React.FC<ContextProviderProps> = ({ children }) => {
     tipAmmountByPerson: 0,
   });
 
-  useEffect(() => {
-    if (
-      contextValue.bill <= 0 ||
-      contextValue.peopleNumber <= 0 ||
-      contextValue.tipPercentaje === 0
-    )
-      return;
+  const { bill, tipPercentaje, peopleNumber } = contextValue;
 
-    const average = contextValue.bill / contextValue.peopleNumber;
-    const tipAmmountByPerson = parseFloat(
-      ((average * contextValue.tipPercentaje) / 100).toFixed(2)
-    );
-    const totalByPerson = parseFloat((average + tipAmmountByPerson).toFixed(2));
+  useEffect(() => {
+    if (bill <= 0 || peopleNumber <= 0 || tipPercentaje === 0)
+      return setContextValue({
+        ...contextValue,
+        tipAmmountByPerson: 0,
+        totalByPerson: 0,
+      });
+
+    const average = bill / peopleNumber;
+    const tip = parseFloat(((average * tipPercentaje) / 100).toFixed(2));
+    const total = parseFloat((average + tip).toFixed(2));
 
     setContextValue({
       ...contextValue,
-      totalByPerson,
-      tipAmmountByPerson,
+      tipAmmountByPerson: tip,
+      totalByPerson: total,
     });
-  }, [
-    contextValue.bill,
-    contextValue.peopleNumber,
-    contextValue.tipPercentaje,
-  ]);
+  }, [bill, peopleNumber, tipPercentaje]);
 
   const handleBillChange = (newValue: number) => {
     setContextValue({ ...contextValue, bill: newValue });
