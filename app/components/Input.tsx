@@ -3,15 +3,19 @@ import Image from 'next/image';
 interface InputProps {
   icon: string;
   iconAlt: string;
-  placeholder: string;
   iconWidth?: number;
+  onChange: (target: any) => void;
+  placeholder: string;
+  value: number;
 }
 
 const Input: React.FC<InputProps> = ({
-  placeholder,
   icon,
   iconAlt,
   iconWidth = 16,
+  onChange,
+  placeholder,
+  value,
 }) => {
   return (
     <div className='mt-2'>
@@ -47,6 +51,8 @@ const Input: React.FC<InputProps> = ({
         w-full
         '
         placeholder={placeholder}
+        value={value > 0 ? value : undefined}
+        onChange={onChange}
       />
     </div>
   );
