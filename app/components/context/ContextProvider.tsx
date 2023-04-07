@@ -25,14 +25,21 @@ const ContextProvider: React.FC<ContextProviderProps> = ({ children }) => {
       return;
 
     const average = contextValue.bill / contextValue.peopleNumber;
-    const tipAmmountByPerson = (average * contextValue.tipPercentaje) / 100;
+    const tipAmmountByPerson = parseFloat(
+      ((average * contextValue.tipPercentaje) / 100).toFixed(2)
+    );
+    const totalByPerson = parseFloat((average + tipAmmountByPerson).toFixed(2));
 
     setContextValue({
       ...contextValue,
-      totalByPerson: average + tipAmmountByPerson,
+      totalByPerson,
       tipAmmountByPerson,
     });
-  }, [contextValue]);
+  }, [
+    contextValue.bill,
+    contextValue.peopleNumber,
+    contextValue.tipPercentaje,
+  ]);
 
   const handleBillChange = (newValue: number) => {
     setContextValue({ ...contextValue, bill: newValue });
