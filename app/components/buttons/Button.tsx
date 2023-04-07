@@ -3,6 +3,7 @@ interface ButtonProps {
   active?: boolean;
   className?: string;
   disabled?: boolean;
+  onClick: () => void;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -10,9 +11,11 @@ const Button: React.FC<ButtonProps> = ({
   active,
   className,
   disabled,
+  onClick,
 }) => {
   return (
     <button
+      onClick={onClick}
       disabled={disabled}
       className={`
     ${active ? 'bg-teal-500' : 'bg-cyan-900'}
