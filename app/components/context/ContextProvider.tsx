@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AppContext } from './AppContext';
 
 interface ContextProviderProps {
@@ -8,28 +8,48 @@ interface ContextProviderProps {
 }
 
 const ContextProvider: React.FC<ContextProviderProps> = ({ children }) => {
-  const [initialValue, setInitialValue] = useState({
+  const [contextValue, setContextValue] = useState({
     bill: 0,
     tipPercentaje: 0,
     peopleNumber: 0,
+    totalByPerson: 0,
+    tipAmmountByPerson: 0,
   });
 
+  useEffect(() => {
+    if (
+      contextValue.bill <= 0 ||
+      contextValue.peopleNumber <= 0 ||
+      contextValue.tipPercentaje === 0
+    )
+      return;
+
+    const average = contextValue.bill / contextValue.peopleNumber;
+    const tipAmmountByPerson = (average * contextValue.tipPercentaje) / 100;
+
+    setContextValue({
+      ...contextValue,
+      totalByPerson: average + tipAmmountByPerson,
+      tipAmmountByPerson,
+    });
+  }, [contextValue]);
+
   const handleBillChange = (newValue: number) => {
-    setInitialValue({ ...initialValue, bill: newValue });
+    setContextValue({ ...contextValue, bill: newValue });
   };
 
   const handlePeopleNumberChange = (newValue: number) => {
-    setInitialValue({ ...initialValue, peopleNumber: newValue });
+    setContextValue({ ...contextValue, peopleNumber: newValue });
   };
 
   const setTipPercentaje = (newValue: number) => {
-    setInitialValue({ ...initialValue, tipPercentaje: newValue });
+    setContextValue({ ...contextValue, tipPercentaje: newValue });
   };
 
   return (
     <AppContext.Provider
       value={{
-        ...initialValue,
+        ...contextValue,
         handleBillChange,
         handlePeopleNumberChange,
         setTipPercentaje,
