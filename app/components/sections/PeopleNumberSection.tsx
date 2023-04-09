@@ -5,7 +5,7 @@ import SectionSpan from '../spans/SectionSpan';
 import personIcon from '../../assets/icon-person.svg';
 import { useCallback, useContext } from 'react';
 import { AppContext } from '../context/AppContext';
-import InputBlock from '../input/InputBlock';
+import InputBlock from '../inputBlock/InputBlock';
 
 const PeopleNumberSection = () => {
   const { peopleNumber, handlePeopleNumberChange, errors, tipPercentaje } =

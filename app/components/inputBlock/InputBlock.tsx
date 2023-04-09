@@ -46,7 +46,7 @@ const InputBlock: React.FC<InputBlockProps> = ({
         />
       </div>
 
-      <NumericInput onChange={onChange} value={value} />
+      <NumericInput onChange={onChange} value={value} onBlur={() => {}} />
     </div>
   </>
 );

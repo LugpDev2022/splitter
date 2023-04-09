@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests on <NumericInput /> should match snapshot 1`] = `
+<div>
+  <input
+    class="
+    border-transparent
+    bg-[#f4fafa]
+    border-2
+    duration-300
+    focus:border-cyan-400
+    font-bold
+    hover:border-cyan-400
+    hover:cursor-pointer 
+    outline-none
+    p-2
+    rounded-lg
+    text-[#00494d]
+    text-2xl
+    text-right
+    transition
+    w-full
+    "
+    placeholder="0"
+    type="text"
+    value="0"
+  />
+</div>
+`;
