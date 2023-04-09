@@ -16,23 +16,22 @@ const Input: React.FC<InputProps> = ({
   onChange,
   placeholder,
   value,
-}) => {
-  return (
-    <div className='mt-2'>
-      <div
-        className='absolute flex flex-col justify-center pl-3'
-        style={{ height: '60px' }}
-      >
-        <Image
-          src={icon}
-          alt={iconAlt}
-          style={{ height: '23px', width: `${iconWidth}px` }}
-        />
-      </div>
+}) => (
+  <div className='mt-2'>
+    <div
+      className='absolute flex flex-col justify-center pl-3'
+      style={{ height: '60px' }}
+    >
+      <Image
+        src={icon}
+        alt={iconAlt}
+        style={{ height: '23px', width: `${iconWidth}px` }}
+      />
+    </div>
 
-      <input
-        type='text'
-        className='
+    <input
+      type='text'
+      className='
         bg-[#f4fafa]
         border-2
         border-transparent
@@ -50,12 +49,11 @@ const Input: React.FC<InputProps> = ({
         transition
         w-full
         '
-        placeholder={placeholder}
-        value={value > 0 ? value : undefined}
-        onChange={onChange}
-      />
-    </div>
-  );
-};
+      placeholder={placeholder}
+      value={value > 0 ? value : ''}
+      onChange={onChange}
+    />
+  </div>
+);
 
 export default Input;

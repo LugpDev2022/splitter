@@ -8,13 +8,15 @@ interface ContextProviderProps {
 }
 
 const ContextProvider: React.FC<ContextProviderProps> = ({ children }) => {
-  const [contextValue, setContextValue] = useState({
+  const initialState = {
     bill: 0,
     tipPercentaje: 0,
     peopleNumber: 0,
     totalByPerson: 0,
     tipAmmountByPerson: 0,
-  });
+  };
+
+  const [contextValue, setContextValue] = useState(initialState);
 
   const { bill, tipPercentaje, peopleNumber } = contextValue;
 
@@ -49,6 +51,14 @@ const ContextProvider: React.FC<ContextProviderProps> = ({ children }) => {
     setContextValue({ ...contextValue, tipPercentaje: newValue });
   };
 
+  const resetChanges = () =>
+    setContextValue({
+      ...contextValue,
+      bill: 0,
+      tipPercentaje: 0,
+      peopleNumber: 0,
+    });
+
   return (
     <AppContext.Provider
       value={{
@@ -56,6 +66,7 @@ const ContextProvider: React.FC<ContextProviderProps> = ({ children }) => {
         handleBillChange,
         handlePeopleNumberChange,
         setTipPercentaje,
+        resetChanges,
       }}
     >
       {children}
