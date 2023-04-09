@@ -21,7 +21,6 @@ const PeopleNumberSection = () => {
 
   return (
     <div className='mt-4'>
-      <SectionSpan>Number of People</SectionSpan>
       <Input
         placeholder='0'
         icon={personIcon}
@@ -29,6 +28,7 @@ const PeopleNumberSection = () => {
         iconAlt='person icon'
         value={peopleNumber}
         onChange={onChange}
+        label='Number of People'
       />
     </div>
   );

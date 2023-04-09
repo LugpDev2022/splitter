@@ -3,12 +3,7 @@ interface sectionSpanProps {
 }
 
 const SectionSpan: React.FC<sectionSpanProps> = ({ children }) => (
-  <span
-    className='font-bold text-lg w-full block'
-    style={{ color: 'hsl(186, 14%, 43%)' }}
-  >
-    {children}
-  </span>
+  <span className='font-bold text-lg text-[#5e7a7d]'>{children}</span>
 );
 
 export default SectionSpan;
