@@ -2,8 +2,9 @@
 
 import { useContext } from 'react';
 import Button from '../buttons/Button';
-import AmmountSpan from '../spans/AmmountSpan';
+('../AmmountBlock');
 import { AppContext } from '../context/AppContext';
+import AmmountBlock from '../AmmountBlock';
 
 const AmmountSection = () => {
   const {
@@ -18,8 +19,8 @@ const AmmountSection = () => {
   return (
     <div className='bg-[#00494d] rounded-xl p-7 flex flex-col justify-between'>
       <div>
-        <AmmountSpan ammount={tipAmmountByPerson}>Tip Ammmount</AmmountSpan>
-        <AmmountSpan ammount={totalByPerson}>Total</AmmountSpan>
+        <AmmountBlock ammount={tipAmmountByPerson} label='Tip Ammmount' />
+        <AmmountBlock ammount={totalByPerson} label='Total' />
       </div>
       <Button
         active
