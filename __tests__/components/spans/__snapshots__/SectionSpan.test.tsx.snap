@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests on <SectionSpan /> should match snapshot 1`] = `
+<div>
+  <span
+    class="font-bold text-lg text-[#5e7a7d]"
+  >
+    Test
+  </span>
+</div>
+`;
