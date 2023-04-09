@@ -1,11 +1,11 @@
 'use client';
 
-import Input from '../Input';
 import SectionSpan from '../spans/SectionSpan';
 
 import personIcon from '../../assets/icon-person.svg';
 import { useCallback, useContext } from 'react';
 import { AppContext } from '../context/AppContext';
+import InputBlock from '../input/InputBlock';
 
 const PeopleNumberSection = () => {
   const { peopleNumber, handlePeopleNumberChange, errors, tipPercentaje } =
@@ -21,7 +21,7 @@ const PeopleNumberSection = () => {
 
   return (
     <div className='mt-4'>
-      <Input
+      <InputBlock
         placeholder='0'
         icon={personIcon}
         iconWidth={20}

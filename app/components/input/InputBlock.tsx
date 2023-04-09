@@ -1,24 +1,24 @@
 import Image from 'next/image';
-import SectionSpan from './spans/SectionSpan';
+import SectionSpan from '../spans/SectionSpan';
+import Input from './NumericInput';
+import NumericInput from './NumericInput';
 
-interface InputProps {
+interface InputBlockProps {
   icon: string;
   iconAlt: string;
   iconWidth?: number;
   label: string;
   onChange: (target: any) => void;
-  placeholder: string;
   value: number;
   error?: boolean;
 }
 
-const Input: React.FC<InputProps> = ({
+const InputBlock: React.FC<InputBlockProps> = ({
   icon,
   iconAlt,
   iconWidth = 16,
   label,
   onChange,
-  placeholder,
   value,
   error = false,
 }) => (
@@ -46,32 +46,9 @@ const Input: React.FC<InputProps> = ({
         />
       </div>
 
-      <input
-        type='text'
-        className={`
-        bg-[#f4fafa]
-        border-2
-        ${error ? 'border-red-500' : 'border-transparent'}
-        duration-300
-        focus:border-cyan-400
-        font-bold
-        hover:border-cyan-400
-        hover:cursor-pointer 
-        outline-none
-        p-2
-        rounded-lg
-        text-[#00494d]
-        text-2xl
-        text-right
-        transition
-        w-full
-        `}
-        placeholder={placeholder}
-        value={value > 0 ? value : ''}
-        onChange={onChange}
-      />
+      <NumericInput onChange={onChange} value={value} />
     </div>
   </>
 );
 
-export default Input;
+export default InputBlock;

@@ -2,10 +2,10 @@
 
 import { useCallback, useContext } from 'react';
 
-import Input from '../Input';
 import { AppContext } from '../context/AppContext';
 
 import dollarIcon from '../../assets/icon-dollar.svg';
+import InputBlock from '../input/InputBlock';
 
 const BillSection = () => {
   const { bill, handleBillChange, errors } = useContext<any>(AppContext);
@@ -20,7 +20,7 @@ const BillSection = () => {
 
   return (
     <div>
-      <Input
+      <InputBlock
         placeholder='0'
         icon={dollarIcon}
         iconAlt='dollar icon'
