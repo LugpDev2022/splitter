@@ -7,6 +7,14 @@ interface ContextProviderProps {
   children: React.ReactNode;
 }
 
+type Property =
+  | 'bill'
+  | 'tipPercentage'
+  | 'peopleNumber'
+  | 'totalByPerson'
+  | 'tipAmmountByPerson'
+  | 'errors';
+
 const ContextProvider: React.FC<ContextProviderProps> = ({ children }) => {
   const initialState = {
     bill: 0,
@@ -14,6 +22,7 @@ const ContextProvider: React.FC<ContextProviderProps> = ({ children }) => {
     peopleNumber: 0,
     totalByPerson: 0,
     tipAmmountByPerson: 0,
+    errors: false,
   };
 
   const [contextValue, setContextValue] = useState(initialState);
@@ -26,6 +35,7 @@ const ContextProvider: React.FC<ContextProviderProps> = ({ children }) => {
         ...contextValue,
         tipAmmountByPerson: 0,
         totalByPerson: 0,
+        errors: true,
       });
 
     const average = bill / peopleNumber;
@@ -39,6 +49,11 @@ const ContextProvider: React.FC<ContextProviderProps> = ({ children }) => {
     });
   }, [bill, peopleNumber, tipPercentaje]);
 
+  const updateContext = (newValue: boolean | number, property: Property) => {
+    setContextValue({ ...contextValue, [property]: newValue });
+  };
+
+  //TODO: Dejar de usar estas 3 funciones y usar la anterior en su lugar
   const handleBillChange = (newValue: number) => {
     setContextValue({ ...contextValue, bill: newValue });
   };
@@ -47,17 +62,11 @@ const ContextProvider: React.FC<ContextProviderProps> = ({ children }) => {
     setContextValue({ ...contextValue, peopleNumber: newValue });
   };
 
-  const setTipPercentaje = (newValue: number) => {
+  const setTipPercentage = (newValue: number) => {
     setContextValue({ ...contextValue, tipPercentaje: newValue });
   };
 
-  const resetChanges = () =>
-    setContextValue({
-      ...contextValue,
-      bill: 0,
-      tipPercentaje: 0,
-      peopleNumber: 0,
-    });
+  const resetChanges = () => setContextValue(initialState);
 
   return (
     <AppContext.Provider
@@ -65,8 +74,9 @@ const ContextProvider: React.FC<ContextProviderProps> = ({ children }) => {
         ...contextValue,
         handleBillChange,
         handlePeopleNumberChange,
-        setTipPercentaje,
+        setTipPercentage,
         resetChanges,
+        updateContext,
       }}
     >
       {children}

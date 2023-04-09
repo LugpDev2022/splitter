@@ -8,7 +8,7 @@ import { AppContext } from '../context/AppContext';
 const percentages = [5, 10, 15, 25, 50];
 
 const TipPercentajeSection = () => {
-  const { tipPercentaje, setTipPercentaje } = useContext<any>(AppContext);
+  const { tipPercentaje, setTipPercentage } = useContext<any>(AppContext);
 
   return (
     <div className='mt-4'>
@@ -18,7 +18,7 @@ const TipPercentajeSection = () => {
           <Button
             key={percentage}
             active={tipPercentaje === percentage}
-            onClick={() => setTipPercentaje(percentage)}
+            onClick={() => setTipPercentage(percentage)}
           >
             {percentage}%
           </Button>

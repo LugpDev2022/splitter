@@ -8,7 +8,7 @@ import { AppContext } from '../context/AppContext';
 import dollarIcon from '../../assets/icon-dollar.svg';
 
 const BillSection = () => {
-  const { bill, handleBillChange } = useContext<any>(AppContext);
+  const { bill, handleBillChange, errors } = useContext<any>(AppContext);
 
   const onChange = useCallback(
     ({ target }: { target: any }) => {
@@ -27,6 +27,7 @@ const BillSection = () => {
         value={bill}
         onChange={onChange}
         label='Bill'
+        error={errors && bill <= 0}
       />
     </div>
   );

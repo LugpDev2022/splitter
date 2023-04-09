@@ -8,7 +8,7 @@ import { useCallback, useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 
 const PeopleNumberSection = () => {
-  const { peopleNumber, handlePeopleNumberChange } =
+  const { peopleNumber, handlePeopleNumberChange, errors, tipPercentaje } =
     useContext<any>(AppContext);
 
   const onChange = useCallback(
@@ -29,6 +29,7 @@ const PeopleNumberSection = () => {
         value={peopleNumber}
         onChange={onChange}
         label='Number of People'
+        error={errors && peopleNumber <= 0}
       />
     </div>
   );
