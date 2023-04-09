@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests on <CostSpan /> should match snapshot 1`] = `
+<div>
+  <span
+    class="text-teal-500 text-5xl font-bold"
+  >
+    $
+    3.33
+  </span>
+</div>
+`;
