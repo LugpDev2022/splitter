@@ -1,14 +1,14 @@
 interface ButtonProps {
-  children: React.ReactNode;
   active?: boolean;
+  children: React.ReactNode;
   className?: string;
   disabled?: boolean;
   onClick: () => void;
 }
 
 const Button: React.FC<ButtonProps> = ({
-  children,
   active,
+  children,
   className,
   disabled,
   onClick,
@@ -20,7 +20,7 @@ const Button: React.FC<ButtonProps> = ({
       className={`
     ${active ? 'bg-teal-500' : 'bg-cyan-900'}
     ${active ? 'text-cyan-900' : ' text-white'}
-    ${className}
+    ${className ? className : ''}
     disabled:bg-[#0d686d]
     disabled:hover:bg-[#0d686d]
     disabled:hover:text-[#00494d]
