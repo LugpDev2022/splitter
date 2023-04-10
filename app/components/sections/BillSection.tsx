@@ -13,6 +13,10 @@ const BillSection = () => {
   const onChange = useCallback(
     ({ target }: { target: any }) => {
       const { value } = target;
+
+      if (isNaN(Number(value)) || Number(value) < 0 || Number(value) > 50000)
+        return;
+
       handleBillChange(value);
     },
     [handleBillChange]

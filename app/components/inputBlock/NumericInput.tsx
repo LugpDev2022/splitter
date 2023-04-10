@@ -6,7 +6,6 @@ interface NumericInputProps {
 }
 
 //Note: This component requires a onChange function that cleans the input value if it is 0
-
 const NumericInput: React.FC<NumericInputProps> = ({
   hasError,
   onBlur,
@@ -34,7 +33,7 @@ const NumericInput: React.FC<NumericInputProps> = ({
     w-full
     `}
     placeholder='0'
-    value={value}
+    value={value ? value : ''}
     onChange={onChange}
     onBlur={onBlur}
   />

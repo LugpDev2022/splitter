@@ -1,37 +1,33 @@
 import Image from 'next/image';
 import SectionSpan from '../spans/SectionSpan';
-import Input from './NumericInput';
 import NumericInput from './NumericInput';
+import ErrorSpan from '../spans/ErrorSpan';
 
 interface InputBlockProps {
+  hasError?: boolean;
   icon: string;
   iconAlt: string;
   iconWidth?: number;
   label: string;
+  onBlur: (target: any) => void;
   onChange: (target: any) => void;
   value: number;
-  error?: boolean;
 }
 
 const InputBlock: React.FC<InputBlockProps> = ({
+  hasError = false,
   icon,
   iconAlt,
   iconWidth = 16,
   label,
+  onBlur,
   onChange,
   value,
-  error = false,
 }) => (
   <>
     <div className='flex flex-row justify-between'>
       <SectionSpan>{label}</SectionSpan>
-      <span
-        className={`text-red-500 font-semibold text-lg text-right ${
-          error ? 'block' : 'hidden'
-        }`}
-      >
-        Can&apos;t be zero
-      </span>
+      <ErrorSpan show={hasError}>Can&apos;t be zero</ErrorSpan>
     </div>
 
     <div className='mt-2'>
@@ -46,7 +42,7 @@ const InputBlock: React.FC<InputBlockProps> = ({
         />
       </div>
 
-      <NumericInput onChange={onChange} value={value} onBlur={() => {}} />
+      <NumericInput onChange={onChange} value={value} onBlur={onBlur} />
     </div>
   </>
 );
