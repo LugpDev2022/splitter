@@ -2,15 +2,15 @@ import Image from 'next/image';
 import SectionSpan from '../spans/SectionSpan';
 import NumericInput from './NumericInput';
 import ErrorSpan from '../spans/ErrorSpan';
+import { InputType } from './types';
 
 interface InputBlockProps {
   hasError?: boolean;
   icon: string;
   iconAlt: string;
   iconWidth?: number;
+  inputType: InputType;
   label: string;
-  onBlur: (target: any) => void;
-  onChange: (target: any) => void;
   value: number;
 }
 
@@ -19,9 +19,8 @@ const InputBlock: React.FC<InputBlockProps> = ({
   icon,
   iconAlt,
   iconWidth = 16,
+  inputType,
   label,
-  onBlur,
-  onChange,
   value,
 }) => (
   <>
@@ -42,7 +41,7 @@ const InputBlock: React.FC<InputBlockProps> = ({
         />
       </div>
 
-      <NumericInput onChange={onChange} value={value} onBlur={onBlur} />
+      <NumericInput value={value} inputType={inputType} />
     </div>
   </>
 );

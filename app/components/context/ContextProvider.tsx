@@ -15,14 +15,23 @@ type Property =
   | 'tipAmmountByPerson'
   | 'errors';
 
+type InitialState = {
+  bill: number;
+  errors: boolean;
+  peopleNumber: number;
+  tipAmmountByPerson: number;
+  tipPercentaje: number;
+  totalByPerson: number;
+};
+
 const ContextProvider: React.FC<ContextProviderProps> = ({ children }) => {
-  const initialState = {
+  const initialState: InitialState = {
     bill: 0,
-    tipPercentaje: 0,
-    peopleNumber: 0,
-    totalByPerson: 0,
-    tipAmmountByPerson: 0,
     errors: false,
+    peopleNumber: 0,
+    tipAmmountByPerson: 0,
+    tipPercentaje: 0,
+    totalByPerson: 0,
   };
 
   const [contextValue, setContextValue] = useState(initialState);
@@ -66,7 +75,7 @@ const ContextProvider: React.FC<ContextProviderProps> = ({ children }) => {
     setContextValue({ ...contextValue, tipPercentaje: newValue });
   };
 
-  const resetChanges = () => setContextValue(initialState);
+  const onResetChanges = () => setContextValue(initialState);
 
   return (
     <AppContext.Provider
@@ -75,7 +84,7 @@ const ContextProvider: React.FC<ContextProviderProps> = ({ children }) => {
         handleBillChange,
         handlePeopleNumberChange,
         setTipPercentage,
-        resetChanges,
+        onResetChanges,
         updateContext,
       }}
     >
