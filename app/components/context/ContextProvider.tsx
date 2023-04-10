@@ -2,30 +2,14 @@
 
 import { useEffect, useState } from 'react';
 import { AppContext } from './AppContext';
+import { ContextState, Property } from './types';
 
 interface ContextProviderProps {
   children: React.ReactNode;
 }
 
-type Property =
-  | 'bill'
-  | 'tipPercentage'
-  | 'peopleNumber'
-  | 'totalByPerson'
-  | 'tipAmmountByPerson'
-  | 'errors';
-
-type InitialState = {
-  bill: number;
-  errors: boolean;
-  peopleNumber: number;
-  tipAmmountByPerson: number;
-  tipPercentaje: number;
-  totalByPerson: number;
-};
-
 const ContextProvider: React.FC<ContextProviderProps> = ({ children }) => {
-  const initialState: InitialState = {
+  const initialState: ContextState = {
     bill: 0,
     errors: false,
     peopleNumber: 0,
@@ -59,21 +43,7 @@ const ContextProvider: React.FC<ContextProviderProps> = ({ children }) => {
   }, [bill, peopleNumber, tipPercentaje]);
 
   const updateContext = (newValue: boolean | number, property: Property) => {
-    console.log({ ...contextValue, [property]: newValue });
     setContextValue((state) => ({ ...state, [property]: newValue }));
-  };
-
-  //TODO: Dejar de usar estas 3 funciones y usar la anterior en su lugar
-  const handleBillChange = (newValue: number) => {
-    setContextValue({ ...contextValue, bill: newValue });
-  };
-
-  const handlePeopleNumberChange = (newValue: number) => {
-    setContextValue({ ...contextValue, peopleNumber: newValue });
-  };
-
-  const setTipPercentage = (newValue: number) => {
-    setContextValue({ ...contextValue, tipPercentaje: newValue });
   };
 
   const onResetChanges = () => setContextValue(initialState);
@@ -82,9 +52,6 @@ const ContextProvider: React.FC<ContextProviderProps> = ({ children }) => {
     <AppContext.Provider
       value={{
         ...contextValue,
-        handleBillChange,
-        handlePeopleNumberChange,
-        setTipPercentage,
         onResetChanges,
         updateContext,
       }}

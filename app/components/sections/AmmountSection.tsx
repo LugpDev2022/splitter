@@ -10,7 +10,7 @@ const AmmountSection = () => {
   const {
     totalByPerson,
     tipAmmountByPerson,
-    resetChanges,
+    onResetChanges,
     bill,
     peopleNumber,
     tipPercentaje,
@@ -26,7 +26,7 @@ const AmmountSection = () => {
         active
         className='w-full'
         disabled={bill <= 0 || peopleNumber <= 0 || tipPercentaje === 0}
-        onClick={resetChanges}
+        onClick={onResetChanges}
       >
         RESET
       </Button>
