@@ -23,7 +23,12 @@ const ContextProvider: React.FC<ContextProviderProps> = ({ children }) => {
   const { bill, tipPercentaje, peopleNumber } = contextValue;
 
   useEffect(() => {
-    if (!bill || !peopleNumber || !tipPercentaje) return;
+    if (!bill || !peopleNumber || !tipPercentaje)
+      return setContextValue({
+        ...contextValue,
+        tipAmmountByPerson: 0,
+        totalByPerson: 0,
+      });
 
     if (bill <= 0 || peopleNumber <= 0 || tipPercentaje === 0)
       return setContextValue({
