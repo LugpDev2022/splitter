@@ -59,7 +59,8 @@ const ContextProvider: React.FC<ContextProviderProps> = ({ children }) => {
   }, [bill, peopleNumber, tipPercentaje]);
 
   const updateContext = (newValue: boolean | number, property: Property) => {
-    setContextValue({ ...contextValue, [property]: newValue });
+    console.log({ ...contextValue, [property]: newValue });
+    setContextValue((state) => ({ ...state, [property]: newValue }));
   };
 
   //TODO: Dejar de usar estas 3 funciones y usar la anterior en su lugar

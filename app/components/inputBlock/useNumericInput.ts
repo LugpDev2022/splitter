@@ -15,7 +15,7 @@ export const useNumericInput = (inputType: InputType) => {
 
     if (value > 0) return;
 
-    updateContext(0, inputType);
+    updateContext('', inputType);
   }, []);
 
   const onInputChange = useCallback(({ target }: { target: any }) => {
@@ -24,7 +24,9 @@ export const useNumericInput = (inputType: InputType) => {
     if (isNaN(Number(value)) || Number(value) < 0 || Number(value) > 50000)
       return;
 
-    updateContext(value, inputType);
+    console.log(typeof value);
+
+    updateContext(parseInt(value), inputType);
   }, []);
 
   return { onBlur, onInputChange };

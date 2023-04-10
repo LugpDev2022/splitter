@@ -17,7 +17,6 @@ const BillSection = () => {
         iconAlt='dollar icon'
         value={bill}
         label='Bill'
-        error={errors && bill <= 0}
         inputType='bill'
       />
     </div>
