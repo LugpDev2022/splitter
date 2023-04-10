@@ -1,10 +1,10 @@
 export type ContextState = {
-  bill: number;
-  errors: boolean;
-  peopleNumber: number;
-  tipAmmountByPerson: number;
-  tipPercentaje: number;
-  totalByPerson: number;
+  bill: number | null;
+  errors: boolean | null;
+  peopleNumber: number | null;
+  tipAmmountByPerson: number | null;
+  tipPercentaje: number | null;
+  totalByPerson: number | null;
 };
 
 export type Property =

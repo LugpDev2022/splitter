@@ -10,9 +10,9 @@ interface ContextProviderProps {
 
 const ContextProvider: React.FC<ContextProviderProps> = ({ children }) => {
   const initialState: ContextState = {
-    bill: 0,
+    bill: null,
     errors: false,
-    peopleNumber: 0,
+    peopleNumber: null,
     tipAmmountByPerson: 0,
     tipPercentaje: 0,
     totalByPerson: 0,
@@ -23,6 +23,8 @@ const ContextProvider: React.FC<ContextProviderProps> = ({ children }) => {
   const { bill, tipPercentaje, peopleNumber } = contextValue;
 
   useEffect(() => {
+    if (!bill || !peopleNumber || !tipPercentaje) return;
+
     if (bill <= 0 || peopleNumber <= 0 || tipPercentaje === 0)
       return setContextValue({
         ...contextValue,

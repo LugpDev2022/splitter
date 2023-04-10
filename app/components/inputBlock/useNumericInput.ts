@@ -15,7 +15,7 @@ export const useNumericInput = (inputType: InputType) => {
 
     if (value > 0) return;
 
-    updateContext('', inputType);
+    updateContext(null, inputType);
   }, []);
 
   const onInputChange = useCallback(({ target }: { target: any }) => {
@@ -23,8 +23,6 @@ export const useNumericInput = (inputType: InputType) => {
 
     if (isNaN(Number(value)) || Number(value) < 0 || Number(value) > 50000)
       return;
-
-    console.log(typeof value);
 
     updateContext(parseInt(value), inputType);
   }, []);

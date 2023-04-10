@@ -38,7 +38,7 @@ const NumericInput: React.FC<NumericInputProps> = ({
       w-full
       `}
       placeholder='0'
-      value={value ? value : ''}
+      value={value || value === 0 ? value : ''}
       onChange={onInputChange}
       onBlur={onBlur}
     />
