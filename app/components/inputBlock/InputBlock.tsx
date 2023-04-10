@@ -11,7 +11,6 @@ interface InputBlockProps {
   iconWidth?: number;
   inputType: InputType;
   label: string;
-  value: number;
 }
 
 const InputBlock: React.FC<InputBlockProps> = ({
@@ -21,7 +20,6 @@ const InputBlock: React.FC<InputBlockProps> = ({
   iconWidth = 16,
   inputType,
   label,
-  value,
 }) => (
   <>
     <div className='flex flex-row justify-between'>
@@ -41,7 +39,7 @@ const InputBlock: React.FC<InputBlockProps> = ({
         />
       </div>
 
-      <NumericInput value={value} inputType={inputType} />
+      <NumericInput inputType={inputType} />
     </div>
   </>
 );

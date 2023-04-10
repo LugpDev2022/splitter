@@ -11,6 +11,7 @@ describe('tests on <NumericInput />', () => {
   useNumericInput.mockReturnValue({
     onInputChange,
     onBlur,
+    value: 0,
   });
 
   beforeEach(() => jest.clearAllMocks());

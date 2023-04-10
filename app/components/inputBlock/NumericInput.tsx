@@ -6,15 +6,10 @@ import { useNumericInput } from './useNumericInput';
 interface NumericInputProps {
   hasError?: boolean;
   inputType: InputType;
-  value: number;
 }
 
-const NumericInput: React.FC<NumericInputProps> = ({
-  hasError,
-  inputType,
-  value,
-}) => {
-  const { onInputChange, onBlur } = useNumericInput(inputType);
+const NumericInput: React.FC<NumericInputProps> = ({ hasError, inputType }) => {
+  const { onInputChange, onBlur, value } = useNumericInput(inputType);
 
   return (
     <input

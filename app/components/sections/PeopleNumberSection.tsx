@@ -6,7 +6,7 @@ import { AppContext } from '../context/AppContext';
 import InputBlock from '../inputBlock/InputBlock';
 
 const PeopleNumberSection = () => {
-  const { peopleNumber, errors } = useContext<any>(AppContext);
+  const { errors } = useContext<any>(AppContext);
 
   return (
     <div className='mt-4'>
@@ -14,7 +14,6 @@ const PeopleNumberSection = () => {
         icon={personIcon}
         iconWidth={20}
         iconAlt='person icon'
-        value={peopleNumber}
         label='Number of People'
         inputType='peopleNumber'
       />

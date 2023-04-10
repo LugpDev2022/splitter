@@ -8,14 +8,13 @@ import dollarIcon from '../../assets/icon-dollar.svg';
 import InputBlock from '../inputBlock/InputBlock';
 
 const BillSection = () => {
-  const { bill, errors } = useContext<any>(AppContext);
+  const { errors } = useContext<any>(AppContext);
 
   return (
     <div>
       <InputBlock
         icon={dollarIcon}
         iconAlt='dollar icon'
-        value={bill}
         label='Bill'
         inputType='bill'
       />

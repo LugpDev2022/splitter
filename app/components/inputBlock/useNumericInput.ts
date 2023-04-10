@@ -3,7 +3,7 @@ import { AppContext } from '../context/AppContext';
 import { InputType } from './types';
 
 export const useNumericInput = (inputType: InputType) => {
-  const { updateContext } = useContext<any>(AppContext);
+  const { updateContext, bill, peopleNumber } = useContext<any>(AppContext);
 
   const onBlur = useCallback(({ target }: { target: any }) => {
     const { value } = target;
@@ -27,5 +27,9 @@ export const useNumericInput = (inputType: InputType) => {
     updateContext(parseInt(value), inputType);
   }, []);
 
-  return { onBlur, onInputChange };
+  return {
+    onBlur,
+    onInputChange,
+    value: inputType === 'bill' ? bill : peopleNumber,
+  };
 };
