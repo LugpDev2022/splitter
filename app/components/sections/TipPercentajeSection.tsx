@@ -4,9 +4,11 @@ import { useContext } from 'react';
 import Button from '../buttons/Button';
 import SectionSpan from '../spans/SectionSpan';
 import { AppContext } from '../context/AppContext';
+import CustomPercentageButton from '../buttons/CustomPercentageButton';
 
 const percentages = [5, 10, 15, 25, 50];
 
+//TODO: Correct the name
 const TipPercentajeSection = () => {
   const { tipPercentaje, updateContext } = useContext<any>(AppContext);
 
@@ -27,6 +29,8 @@ const TipPercentajeSection = () => {
             {percentage}%
           </Button>
         ))}
+
+        <CustomPercentageButton />
       </div>
     </div>
   );
