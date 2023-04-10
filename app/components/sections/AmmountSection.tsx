@@ -25,7 +25,7 @@ const AmmountSection = () => {
       <Button
         active
         className='w-full'
-        disabled={bill <= 0 || peopleNumber <= 0 || tipPercentaje === 0}
+        disabled={bill <= 0 && peopleNumber <= 0 && tipPercentaje === 0}
         onClick={onResetChanges}
       >
         RESET
