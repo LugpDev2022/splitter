@@ -4,22 +4,22 @@ exports[`Tests on <Button /> should have active button styles 1`] = `
 <div>
   <button
     class="
-    bg-teal-500
-    text-cyan-900
-    
-    disabled:bg-[#0d686d]
-    disabled:hover:bg-[#0d686d]
-    disabled:hover:text-[#00494d]
-    disabled:text-[#00494d]
-    duration-300
-    font-bold
-    hover:bg-teal-200
-    hover:text-cyan-900
-    p-4
-    rounded-lg
-    text-xl
-    transition
-  "
+      bg-teal-500
+      text-cyan-900
+      
+      disabled:bg-[#0d686d]
+      disabled:hover:bg-[#0d686d]
+      disabled:hover:text-[#00494d]
+      disabled:text-[#00494d]
+      duration-300
+      font-bold
+      hover:bg-teal-200
+      hover:text-cyan-900
+      p-4
+      rounded-lg
+      text-xl
+      transition
+    "
   >
     Test Button
   </button>
@@ -30,22 +30,22 @@ exports[`Tests on <Button /> should have normal button styles 1`] = `
 <div>
   <button
     class="
-    bg-cyan-900
-     text-white
-    
-    disabled:bg-[#0d686d]
-    disabled:hover:bg-[#0d686d]
-    disabled:hover:text-[#00494d]
-    disabled:text-[#00494d]
-    duration-300
-    font-bold
-    hover:bg-teal-200
-    hover:text-cyan-900
-    p-4
-    rounded-lg
-    text-xl
-    transition
-  "
+      bg-cyan-900
+       text-white
+      
+      disabled:bg-[#0d686d]
+      disabled:hover:bg-[#0d686d]
+      disabled:hover:text-[#00494d]
+      disabled:text-[#00494d]
+      duration-300
+      font-bold
+      hover:bg-teal-200
+      hover:text-cyan-900
+      p-4
+      rounded-lg
+      text-xl
+      transition
+    "
   >
     Test Button
   </button>

@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests on <ErrorSpan /> should match snapshot 1`] = `
+<div>
+  <span
+    class="
+    text-red-500
+    font-semibold
+    text-lg
+    text-right
+    hidden"
+  >
+    Test Error
+  </span>
+</div>
+`;
