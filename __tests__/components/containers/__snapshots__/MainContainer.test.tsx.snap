@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests on <GeneralContainer /> should match snapshot 1`] = `
+<div>
+  <div
+    class="  bg-white gap-7 grid grid-cols-1 lg:w-9/12 md:grid-cols-2 md:rounded-[30px] md:w-11/12 p-7 rounded-t-[35px] w-full "
+  >
+    <h2>
+      Example h2
+    </h2>
+  </div>
+</div>
+`;

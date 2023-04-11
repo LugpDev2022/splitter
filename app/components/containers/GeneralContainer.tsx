@@ -2,10 +2,9 @@ interface GeneralContainerProps {
   children: React.ReactNode;
 }
 
-const GeneralContainer: React.FC<GeneralContainerProps> = ({ children }) => {
-  return (
-    <div
-      className='
+const GeneralContainer: React.FC<GeneralContainerProps> = ({ children }) => (
+  <div
+    className='
     flex
     flex-col
     gap-8
@@ -13,12 +12,11 @@ const GeneralContainer: React.FC<GeneralContainerProps> = ({ children }) => {
     md:justify-center
     min-h-[1020px]
     md:min-h-0
-    '
-      style={{ height: '100%', alignItems: 'center' }}
-    >
-      {children}
-    </div>
-  );
-};
+    h-full
+    items-center'
+  >
+    {children}
+  </div>
+);
 
 export default GeneralContainer;
