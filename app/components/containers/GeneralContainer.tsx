@@ -10,7 +10,7 @@ const GeneralContainer: React.FC<GeneralContainerProps> = ({ children }) => (
     gap-8
     justify-end
     md:justify-center
-    min-h-[1020px]
+    min-h-[1045px]
     md:min-h-0
     h-full
     items-center'
