@@ -6,8 +6,8 @@ interface AmmountBlock {
 }
 
 const AmmountBlock: React.FC<AmmountBlock> = ({ label, ammount }) => (
-  <div className='flex flex-row justify-between mb-10'>
-    <div className='grid grid-rows-2'>
+  <div className='flex flex-col justify-between mb-8'>
+    <div className='flex flex-col mb-2'>
       <span className='text-white font-bold tracking-wide'>{label}</span>
       <span className='text-[#7f9c9f]'>/ person</span>
     </div>
