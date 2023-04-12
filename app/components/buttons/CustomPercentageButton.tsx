@@ -14,13 +14,13 @@ const CustomPercentageButton = () => {
 
   useEffect(() => {
     updateContext(inputValue, 'tipPercentaje');
-  }, [inputValue]);
+  }, [inputValue, updateContext]);
 
   useEffect(() => {
     if (tipPercentaje === inputValue) return setActive(true);
 
     setActive(false);
-  }, [tipPercentaje]);
+  }, [tipPercentaje, inputValue]);
 
   const onChange = ({ target }: { target: any }) => {
     const { value } = target;
