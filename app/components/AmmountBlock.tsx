@@ -1,8 +1,10 @@
 import CostSpan from './spans/CostSpan';
 
+type AmmountLabel = 'Tip Ammount' | 'Total';
+
 interface AmmountBlock {
   ammount: number;
-  label: string;
+  label: AmmountLabel;
 }
 
 const AmmountBlock: React.FC<AmmountBlock> = ({ label, ammount }) => (
