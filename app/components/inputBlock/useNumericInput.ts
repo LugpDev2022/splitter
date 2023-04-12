@@ -21,7 +21,11 @@ export const useNumericInput = (inputType: InputType) => {
   const onInputChange = useCallback(({ target }: { target: any }) => {
     const { value } = target;
 
-    if (isNaN(Number(value)) || Number(value) < 0 || Number(value) > 50000)
+    if (
+      isNaN(Number(value)) ||
+      Number(value) < 0 ||
+      Number(value) > (inputType === 'bill' ? 50000 : 50)
+    )
       return;
 
     updateContext(parseInt(value), inputType);
