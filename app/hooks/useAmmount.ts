@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useMemo, useState } from 'react';
 import { getTotalByPerson } from '../helpers/getTotalByPerson';
 import { AppContext } from '../components/context/AppContext';
 
