@@ -11,14 +11,12 @@ const BillSection = () => {
   const { errors } = useContext<any>(AppContext);
 
   return (
-    <div>
-      <InputBlock
-        icon={dollarIcon}
-        iconAlt='dollar icon'
-        label='Bill'
-        inputType='bill'
-      />
-    </div>
+    <InputBlock
+      icon={dollarIcon}
+      iconAlt='dollar icon'
+      label='Bill'
+      inputType='bill'
+    />
   );
 };
 

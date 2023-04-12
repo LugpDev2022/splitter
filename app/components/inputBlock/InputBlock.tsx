@@ -21,7 +21,7 @@ const InputBlock: React.FC<InputBlockProps> = ({
   inputType,
   label,
 }) => (
-  <>
+  <div>
     <div className='flex flex-row justify-between'>
       <SectionSpan>{label}</SectionSpan>
       <ErrorSpan show={hasError}>Can&apos;t be zero</ErrorSpan>
@@ -41,7 +41,7 @@ const InputBlock: React.FC<InputBlockProps> = ({
 
       <NumericInput inputType={inputType} />
     </div>
-  </>
+  </div>
 );
 
 export default InputBlock;

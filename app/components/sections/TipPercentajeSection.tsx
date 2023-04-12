@@ -17,7 +17,7 @@ const TipPercentajeSection = () => {
   };
 
   return (
-    <div className='mt-4'>
+    <div className='my-4'>
       <SectionSpan>Select Tip %</SectionSpan>
       <div className='grid grid-cols-2 md:grid-cols-3 gap-4'>
         {percentages.map((percentage: number) => (

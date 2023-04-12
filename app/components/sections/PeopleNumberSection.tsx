@@ -9,15 +9,13 @@ const PeopleNumberSection = () => {
   const { errors } = useContext<any>(AppContext);
 
   return (
-    <div className='mt-4'>
-      <InputBlock
-        icon={personIcon}
-        iconWidth={20}
-        iconAlt='person icon'
-        label='Number of People'
-        inputType='peopleNumber'
-      />
-    </div>
+    <InputBlock
+      icon={personIcon}
+      iconWidth={20}
+      iconAlt='person icon'
+      label='Number of People'
+      inputType='peopleNumber'
+    />
   );
 };
 
