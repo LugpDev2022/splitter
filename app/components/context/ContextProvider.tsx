@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { AppContext } from './AppContext';
 import { ContextState, Property } from './types';
 
@@ -13,41 +13,10 @@ const ContextProvider: React.FC<ContextProviderProps> = ({ children }) => {
     bill: null,
     errors: false,
     peopleNumber: null,
-    tipAmmountByPerson: 0,
     tipPercentaje: 0,
-    totalByPerson: 0,
   };
 
   const [contextValue, setContextValue] = useState(initialState);
-
-  const { bill, tipPercentaje, peopleNumber } = contextValue;
-
-  useEffect(() => {
-    if (!bill || !peopleNumber || !tipPercentaje)
-      return setContextValue({
-        ...contextValue,
-        tipAmmountByPerson: 0,
-        totalByPerson: 0,
-      });
-
-    if (bill <= 0 || peopleNumber <= 0 || tipPercentaje === 0)
-      return setContextValue({
-        ...contextValue,
-        tipAmmountByPerson: 0,
-        totalByPerson: 0,
-        errors: true,
-      });
-
-    const average = bill / peopleNumber;
-    const tip = parseFloat(((average * tipPercentaje) / 100).toFixed(2));
-    const total = parseFloat((average + tip).toFixed(2));
-
-    setContextValue({
-      ...contextValue,
-      tipAmmountByPerson: tip,
-      totalByPerson: total,
-    });
-  }, [bill, peopleNumber, tipPercentaje]);
 
   const updateContext = (newValue: boolean | number, property: Property) => {
     setContextValue((state) => ({ ...state, [property]: newValue }));

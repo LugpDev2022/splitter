@@ -1,31 +1,29 @@
 'use client';
 
-import { useContext } from 'react';
+import useAmmount from '@/app/hooks/useAmmount';
 import Button from '../buttons/Button';
-('../AmmountBlock');
-import { AppContext } from '../context/AppContext';
 import AmmountBlock from '../AmmountBlock';
 
 const AmmountSection = () => {
   const {
-    totalByPerson,
     tipAmmountByPerson,
-    onResetChanges,
+    totalByPerson,
     bill,
     peopleNumber,
-    tipPercentaje,
-  } = useContext<any>(AppContext);
+    tipPercentage,
+    onResetChanges,
+  } = useAmmount();
 
   return (
     <div className='bg-[#00494d] rounded-xl p-7 flex flex-col justify-between'>
       <div>
-        <AmmountBlock ammount={tipAmmountByPerson} label='Tip Ammmount' />
+        <AmmountBlock ammount={tipAmmountByPerson} label='Tip Ammount' />
         <AmmountBlock ammount={totalByPerson} label='Total' />
       </div>
       <Button
         active
         className='w-full'
-        disabled={bill <= 0 && peopleNumber <= 0 && tipPercentaje === 0}
+        disabled={bill <= 0 && peopleNumber <= 0 && tipPercentage === 0}
         onClick={onResetChanges}
       >
         RESET
